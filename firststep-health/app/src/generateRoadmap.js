@@ -545,11 +545,83 @@ export async function generateRoadmap(formData, lang = "en") {
   const base = templates[type];
   const service = serviceInput || base.service;
 
-  return {
-    ...base,
-    service,
-    summary: `${base.summary}${personalNotes.length ? " " + personalNotes.join(" ") : ""}`,
-    officialSources: sources,
-    disclaimer
-  };
+  const readinessItems = [
+  serviceInput ? "Service idea provided" : "Service idea missing",
+  formData.background ? "Qualification/background provided" : "Qualification/background missing",
+  formData.budget ? "Budget selected" : "Budget missing",
+  formData.space ? "Operating space selected" : "Operating space missing",
+  formData.location ? "Location provided" : "Location missing"
+];
+
+let businessReadiness = 40;
+if (serviceInput) businessReadiness += 20;
+if (formData.background) businessReadiness += 20;
+if (formData.budget) businessReadiness += 10;
+if (formData.space) businessReadiness += 5;
+if (formData.location) businessReadiness += 5;
+
+const confidence =
+  businessReadiness >= 90 ? "High" :
+  businessReadiness >= 70 ? "Medium" :
+  "Low";
+
+const isArabic = lang === "ar";
+
+const recommendationReasons = isArabic
+  ? [
+      `نوع الخدمة: ${service}`,
+      formData.background ? `الخلفية أو المؤهل: ${formData.background}` : "الخلفية أو المؤهل غير مذكور",
+      formData.budget ? `الميزانية: ${formData.budget}` : "الميزانية غير مذكورة",
+      formData.space === "Home" ? "طريقة التشغيل: من المنزل" : "طريقة التشغيل: مكان مستقل",
+      "الموقع: القعا، العين، أبوظبي"
+    ]
+  : [
+      `Service selected: ${service}`,
+      formData.background ? `Background/qualification: ${formData.background}` : "Background/qualification not provided",
+      formData.budget ? `Budget selected: ${formData.budget}` : "Budget not provided",
+      formData.space === "Home" ? "Operation model: Home-based" : "Operation model: Separate space",
+      "Location: Al Qua'a, Al Ain, Abu Dhabi"
+    ];
+
+const thingsToVerify = isArabic
+  ? [
+      "تأكيد الجهة المسؤولة عن الموافقة أو الترخيص",
+      "تأكيد ما إذا كان التشغيل من المنزل مسموحًا",
+      "تأكيد الرسوم والتكاليف الحالية",
+      "تأكيد متطلبات التأمين أو التفتيش إن وجدت"
+    ]
+  : [
+      "Confirm the correct approval or licensing authority",
+      "Confirm whether home-based operation is permitted",
+      "Confirm current fees and cost requirements",
+      "Confirm insurance or inspection requirements if applicable"
+    ];
+
+const firstStep = isArabic
+  ? {
+      title: "خطوتك الأولى",
+      action: "تحقق من الجهة الرسمية المناسبة قبل صرف أي مبلغ.",
+      effort: "20–30 دقيقة",
+      priority: "عالية"
+    }
+  : {
+      title: "Your First Step",
+      action: "Verify the correct official authority before spending money.",
+      effort: "20–30 minutes",
+      priority: "High"
+    };
+
+return {
+  ...base,
+  service,
+  summary: `${base.summary}${personalNotes.length ? " " + personalNotes.join(" ") : ""}`,
+  businessReadiness,
+  confidence,
+  readinessItems,
+  recommendationReasons,
+  thingsToVerify,
+  firstStep,
+  officialSources: sources,
+  disclaimer
+};
 }
