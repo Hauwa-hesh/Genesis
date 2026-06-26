@@ -1,5 +1,7 @@
 # Roadmap Engine Testing
 
+The roadmap engine uses structured service templates, keyword detection, and verified UAE research notes to generate safe personalized guidance while avoiding unverified legal or medical claims.
+
 The roadmap engine was tested using multiple healthcare service inputs.
 
 ## Test 1
