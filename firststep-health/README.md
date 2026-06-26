@@ -68,12 +68,6 @@ The platform provides:
 
 FirstStep Health is designed for first-time founders in Al Qua'a and other rural UAE communities who have healthcare skills but do not know how to legally establish a business.
 
-### Example User
-
-**Fatima** has been helping her neighbours by checking blood pressure and blood sugar levels for years. She wants to make her services official but does not know what type of license she needs, what documents are required, or where to begin.
-
-FirstStep Health gives her a clear, personalised roadmap in minutes.
-
 ---
 
 ## How It Works
@@ -162,10 +156,10 @@ Our survey findings and user research are documented in:
 
 | Team Member | Role |
 |-------------|-------|
-| [Name] | Project Lead & Documentation |
-| [Name] | Frontend Development |
-| [Name] | AI Integration |
-| [Name] | Research, Validation & UX |
+| Nana Abubakar Idris | Project Lead & Documentation |
+| Hauwa Ishaq Nabayi | Frontend Development |
+| Nafisa Bashir | AI Integration |
+| Halima Bashir | Research, Validation & UX |
 
 ---
 
