@@ -142,6 +142,10 @@ Our survey findings and user research are documented in:
 
 `docs/validation-notes.md`
 
+## Live Demo 
+**GitHub Repository:** [Add Repository Link] 
+**Live Demo:** [Add GitHub Pages Link] ---
+
 ---
 
 ## Team Genesis
