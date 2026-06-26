@@ -148,10 +148,10 @@ Our survey findings and user research are documented in:
 
 | Team Member | Role |
 |-------------|-------|
-| Nana Abubakar Idris | Project Lead & Documentation |
-| Hauwa Ishaq Nabayi | Frontend Development |
-| Nafisa Bashir | AI Integration |
-| Halima Bashir | Research, Validation & UX |
+| Nana Abubakar Idris |Documentation |
+| Hauwa Ishaq Nabayi |Frontend Development |
+| Nafisa Bashir |AI Integration |
+| Halima Bashir |Research|
 
 ---
 
