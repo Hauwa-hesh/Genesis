@@ -13,7 +13,7 @@ If the notes do not contain enough information, clearly say that the item must b
 
 USER DETAILS:
 Service: ${formData.service || 'Not provided'}
-Qualification/background: ${formData.qualification || 'Not provided'}
+Qualification/background: ${formData.background  || 'Not provided'}
 Budget: ${formData.budget || 'Not provided'}
 Operating space: ${formData.space || 'Not provided'}
 Location: Al Qua'a, Al Ain, Abu Dhabi
